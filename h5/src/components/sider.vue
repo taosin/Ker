@@ -3,16 +3,25 @@
     <el-collapse v-model="activeNames" @change="handleChange">
       <template v-for="(list,m) of datas">
         <el-collapse-item :title="list.title" :name="list.name" :key="m">
-          <template v-for="(item,n) of list.children">
-            <el-tag :key="n" style="margin:3px">{{item.title}}</el-tag>
-          </template>
+          <draggable
+            v-model="list.children"
+            :group="{name:'unit', pull: 'clone', put: false}"
+            :sort="false">
+            <template v-for="(item,n) of list.children">
+              <el-tag :key="n" style="margin:3px" hit>{{item.title}}</el-tag>
+            </template>
+          </draggable>
         </el-collapse-item>
       </template>
     </el-collapse>
   </div>
 </template>
 <script>
+import draggable from "vuedraggable";
 export default {
+  components: {
+    draggable
+  },
   data() {
     return {
       activeNames: ["form", "data"],
