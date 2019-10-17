@@ -8,7 +8,7 @@
             :group="{name:'unit', pull: 'clone', put: false}"
             :sort="false">
             <template v-for="(item,n) of list.children">
-              <el-tag :key="n" style="margin:3px" hit>{{item.title}}</el-tag>
+              <el-tag :key="n" style="margin:3px;cursor: move" hit>{{item.title}}</el-tag>
             </template>
           </draggable>
         </el-collapse-item>
