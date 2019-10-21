@@ -8,7 +8,7 @@
 import componentItem from "./componentItem";
 export default {
   components: {
-    componentItem
+    componentItem,
   },
   data() {
     return {
@@ -29,7 +29,12 @@ export default {
               children: [
                 {
                   name: "el-input",
-                  props: { type: "textarea", size: "large", value: "3131", 'v-model':'sddsds' },
+                  props: {
+                    type: "textarea",
+                    size: "large",
+                    value: "3131",
+                    "v-model": "sddsds"
+                  },
                   text: "username"
                 }
               ]
@@ -45,8 +50,8 @@ export default {
                   props: {
                     size: "small",
                     placeholder: "请选择",
-                    'v-model': "type",
-                    value:'1'
+                    "v-model": "type",
+                    value: "1"
                   },
                   children: [
                     {
