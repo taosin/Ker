@@ -14,7 +14,9 @@
             <div class="main-area">
               <workMeta />
             </div>
-            <el-aside class="aside-in-main"></el-aside>
+            <el-aside class="aside-in-main">
+              <right />
+            </el-aside>
           </el-container>
         </el-main>
         <el-footer height="30px">Footer</el-footer>
@@ -26,6 +28,7 @@
 import sider from "@/components/dashboard/sider";
 import top from "@/components/dashboard/header";
 import workMeta from "@/components/dashboard/workmeta";
+import right from '@/components/dashboard/right/index'
 export default {
   data() {
     return {};
@@ -33,7 +36,8 @@ export default {
   components: {
     sider,
     top,
-    workMeta
+    workMeta,
+    right
   }
 };
 </script>
