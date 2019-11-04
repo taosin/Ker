@@ -51,7 +51,8 @@ export default {
                     size: "small",
                     placeholder: "请选择",
                     "v-model": "type",
-                    value: "1"
+                    value: "1",
+                    clearable: true
                   },
                   children: [
                     {
@@ -80,7 +81,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
 .view {
   width: 100%;
   height: 100%;
