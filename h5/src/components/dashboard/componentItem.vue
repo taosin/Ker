@@ -6,7 +6,8 @@
   >
     <draggable
       v-model="item.children"
-      :group="{name:'cmps', put: false}"
+      group="items"
+      @change="changeEvent"
       :sort="true">
       <template v-for="(child,index) in item.children">
         <componentItem :item="child" :key="index"></componentItem>
@@ -26,15 +27,21 @@ export default {
   },
   data() {
     return {};
+  },
+  methods:{
+    changeEvent(event){
+      debugger
+    }
   }
 };
 </script>
 
 <style lang="less" scoped>
 .component-item {
-  border: 1px solid #fff;
+  border: 1px dashed #409EFF;
+  padding: 5px;
 }
 .component-item:hover {
-  border: 1px solid #409EFF;
+  border: 1px dashed #409EFF;
 }
 </style>

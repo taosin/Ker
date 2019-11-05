@@ -5,7 +5,9 @@
         <el-collapse-item :title="list.title" :name="list.name" :key="m">
           <draggable
             v-model="list.children"
-            :group="{name:'unit', pull: 'clone', put: false}"
+            :group="{name:'unit', pull: 'clone', put: true}"
+            :clone="cloneDog"
+            @end="onEnd"
             :sort="false">
             <template v-for="(item,n) of list.children">
               <el-tag :key="n" style="margin:3px;cursor: move" hit>{{item.title}}</el-tag>
@@ -114,6 +116,12 @@ export default {
   methods: {
     handleChange(val) {
       console.log(val);
+    },
+    cloneDog(item){
+      return item
+    },
+    onEnd(item){
+      console.log(item)
     }
   }
 };
