@@ -6,7 +6,7 @@
   >
     <draggable
       v-model="item.children"
-      group="items"
+      :group="{name:'items', pull: 'clone', put: true}"
       @change="changeEvent"
       :sort="true">
       <template v-for="(child,index) in item.children">

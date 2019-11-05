@@ -5,7 +5,7 @@
         <el-collapse-item :title="list.title" :name="list.name" :key="m">
           <draggable
             v-model="list.children"
-            :group="{name:'unit', pull: 'clone', put: true}"
+            :group="{name:'unit', pull: 'clone', put: false}"
             :clone="cloneDog"
             @end="onEnd"
             :sort="false">
