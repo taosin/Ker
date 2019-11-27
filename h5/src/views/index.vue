@@ -44,8 +44,6 @@ export default {
 
 <style lang="less" scoped>
 .el-header {
-  //   background: rgba(5, 64, 208, .8);
-  // background: linear-gradient(to right,rgba(5, 64, 208, .5),rgba(5, 64, 208, .8),rgba(5, 64, 208, .5),rgba(5, 64, 208, .6));
   border-bottom: 1px solid;
   color: #333;
   line-height: 60px;

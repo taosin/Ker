@@ -6,9 +6,9 @@
   >
     <draggable
       v-model="item.children"
-      :group="{name:'items', pull: 'clone', put: true}"
+      :group="{name:'items', pull: 'move', put: true}"
       @change="changeEvent"
-      :sort="true">
+      :sort="true">   
       <template v-for="(child,index) in item.children">
         <componentItem :item="child" :key="index"></componentItem>
       </template>
@@ -42,6 +42,11 @@ export default {
   padding: 5px;
 }
 .component-item:hover {
-  border: 1px dashed #409EFF;
+  border: 1px dashed red;
 }
+
+/deep/ .el-form-item{
+	margin-bottom: 5px;
+}
+
 </style>

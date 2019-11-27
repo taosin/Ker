@@ -18,7 +18,8 @@ export default {
     return {
       tabs: [
         { label: "控件属性", name: "field" },
-        { label: "表单属性", name: "form" }
+        { label: "表单属性", name: "form" },
+		{ label: "接口设置", name: "api" }
       ],
       activeName: "field"
     };

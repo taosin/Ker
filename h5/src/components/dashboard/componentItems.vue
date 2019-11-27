@@ -86,4 +86,8 @@ export default {
   width: 100%;
   height: 100%;
 }
+/deep/ form.el-form.el-form--label-rigth {
+    border: 1px solid orange;
+    padding: 5px;
+}
 </style>
