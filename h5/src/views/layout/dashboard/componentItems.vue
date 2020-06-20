@@ -8,39 +8,35 @@
 </template>
 
 <script>
-import componentItem from "./componentItem";
-import { mapState, mapActions } from "vuex";
+import componentItem from './componentItem'
+import { mapState, mapActions } from 'vuex'
 export default {
   components: {
     componentItem,
-    draggable: () => import("vuedraggable"),
+    draggable: () => import('vuedraggable'),
   },
   data() {
-    return {};
+    return {}
   },
   computed: {
     items: {
       get() {
-        return this.$store.state.layout.elements;
+        return this.$store.state.layout.elements
       },
       set(value) {
-        this.updateElements(value);
+        this.updateElements(value)
       },
     },
   },
   methods: {
-    ...mapActions(["updateElements"]),
+    ...mapActions(['updateElements']),
   },
-};
+}
 </script>
 
 <style lang="less" scoped>
 .view {
   width: 100%;
   height: 100%;
-}
-/deep/ form.el-form.el-form--label-rigth {
-  border: 1px solid orange;
-  padding: 5px;
 }
 </style>
