@@ -1,0 +1,9 @@
+{
+  "common": {
+    "save": "save",
+    "edit": "edit",
+    "remove": "remove",
+    "preview": "preview",
+    "language": "English"
+  }
+}

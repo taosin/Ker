@@ -1,21 +1,26 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-Vue.use(Router);
+import Vue from 'vue'
+import Router from 'vue-router'
+Vue.use(Router)
 
-
-const routes = [{
+const routes = [
+  {
     name: 'home',
     path: '/',
-    redirect: '/dashboard'
-}, {
+    redirect: '/dashboard',
+  },
+  {
     name: 'dashboard',
     path: '/dashboard',
-    component: () => import('@/views/index.vue')
-}]
+    component: () => import('@/views/index.vue'),
+    meta: {
+      title: 'Dashboard',
+    },
+  },
+]
 
 const routers = new Router({
-    routes
-});
+  routes,
+})
 
 // routers.beforeEach((to, from, next) => {
 //     next()
@@ -24,4 +29,4 @@ const routers = new Router({
 // routers.afterEach(to => {
 
 // })
-export default routers;
+export default routers

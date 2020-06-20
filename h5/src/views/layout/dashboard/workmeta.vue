@@ -1,26 +1,28 @@
 <template>
   <div class="workmeta">
     <div class="main">
-      <componentItems v-if="datas.length" />
-      <div class="empty" v-else>
-        {{emptyText}}
-      </div>
+      <template v-if="datas.length">
+        <componentItems id="_workspace" />
+      </template>
+      <Empty v-else :emptyText="emptyText" />
     </div>
   </div>
 </template>
 
 <script>
 import componentItems from "./componentItems";
+import Empty from "./Empty";
 export default {
   components: {
-    componentItems
+    componentItems,
+    Empty,
   },
   data() {
     return {
       datas: [1],
-      emptyText: "拖拽或添加组件到此处"
+      emptyText: "拖拽或添加组件到此处",
     };
-  }
+  },
 };
 </script>
 
@@ -34,14 +36,6 @@ export default {
     overflow: auto;
     padding: 10px;
     min-height: -webkit-fill-available;
-    .empty {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      height: -webkit-fill-available;
-      justify-content: center;
-      background-color: #dedede;
-    }
   }
 }
 </style>

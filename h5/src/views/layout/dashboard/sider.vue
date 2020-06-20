@@ -1,16 +1,17 @@
 <template>
   <div class="sider">
     <el-collapse v-model="activeNames" @change="handleChange">
-      <template v-for="(list,m) of datas">
+      <template v-for="(list, m) of datas">
         <el-collapse-item :title="list.title" :name="list.name" :key="m">
           <draggable
             v-model="list.children"
-            :group="{name:'unit', pull: 'clone', put: false}"
+            :group="{ name: 'people', pull: 'clone', put: false }"
             :clone="cloneDog"
             @end="onEnd"
-            :sort="false">
-            <template v-for="(item,n) of list.children">
-              <el-tag :key="n" style="margin:3px;cursor: move" hit>{{item.title}}</el-tag>
+            :sort="false"
+          >
+            <template v-for="(item, n) of list.children">
+              <el-tag :key="n" style="margin:3px;cursor: move" hit>{{ item.title }}</el-tag>
             </template>
           </draggable>
         </el-collapse-item>
@@ -18,11 +19,13 @@
     </el-collapse>
   </div>
 </template>
+
 <script>
 import draggable from "vuedraggable";
+// import { mapState } from "vuex";
 export default {
   components: {
-    draggable
+    draggable,
   },
   data() {
     return {
@@ -34,41 +37,41 @@ export default {
           children: [
             {
               title: "单选框",
-              name: "radio"
+              name: "radio",
             },
             {
               title: "多选框",
-              name: "checkbox"
+              name: "checkbox",
             },
             {
               title: "输入框",
-              name: "input"
+              name: "input",
             },
             {
               title: "选择器",
-              name: "select"
+              name: "select",
             },
             {
               title: "时间日期选择器",
-              name: "datetimepicker"
+              name: "datetimepicker",
             },
             {
               title: "开关",
-              name: "switch"
+              name: "switch",
             },
             {
               title: "滑块",
-              name: "slider"
+              name: "slider",
             },
             {
               title: "评分",
-              name: "rate"
+              name: "rate",
             },
             {
               title: "上传",
-              name: "upload"
-            }
-          ]
+              name: "upload",
+            },
+          ],
         },
         {
           title: "数据类",
@@ -76,9 +79,9 @@ export default {
           children: [
             {
               title: "表格",
-              name: "table"
-            }
-          ]
+              name: "table",
+            },
+          ],
         },
         {
           title: "通知类",
@@ -86,9 +89,9 @@ export default {
           children: [
             {
               title: "警告",
-              name: "alert"
-            }
-          ]
+              name: "alert",
+            },
+          ],
         },
         {
           title: "导航类",
@@ -96,9 +99,9 @@ export default {
           children: [
             {
               title: "导航菜单",
-              name: "menu"
-            }
-          ]
+              name: "menu",
+            },
+          ],
         },
         {
           title: "其它",
@@ -106,26 +109,25 @@ export default {
           children: [
             {
               title: "对话框",
-              name: "dialog"
-            }
-          ]
-        }
-      ]
+              name: "dialog",
+            },
+          ],
+        },
+      ],
     };
   },
   methods: {
     handleChange(val) {
       console.log(val);
     },
-    cloneDog(item){
-      return item
+    cloneDog(item) {
+      return item;
     },
-    onEnd(item){
-      console.log(item)
-    }
-  }
+    onEnd(item) {
+      console.log(item);
+    },
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

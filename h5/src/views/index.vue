@@ -25,21 +25,21 @@
   </div>
 </template>
 <script>
-import sider from "@/components/dashboard/sider";
-import top from "@/components/dashboard/header";
-import workMeta from "@/components/dashboard/workmeta";
-import right from '@/components/dashboard/right/index'
+import sider from '@/layout/dashboard/sider'
+import top from '@/layout/dashboard/header'
+import workMeta from '@/layout/dashboard/workmeta'
+import right from '@/layout/dashboard/right/index'
 export default {
   data() {
-    return {};
+    return {}
   },
   components: {
     sider,
     top,
     workMeta,
-    right
-  }
-};
+    right,
+  },
+}
 </script>
 
 <style lang="less" scoped>
@@ -68,7 +68,7 @@ export default {
       width: 200px;
     }
   }
-  .main-area{
+  .main-area {
     position: absolute;
     left: 300px;
     top: 60px;
